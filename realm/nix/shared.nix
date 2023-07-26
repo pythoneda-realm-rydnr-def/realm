@@ -21,7 +21,7 @@ rec {
       echo -e " \033[32m| '_ \| | | | __| '_ \ / _ \| '_ \ \033[34m/ _ \\\\\033[35m/ _\` |\033[36m/ _\` |\033[33mhttps://github.com/pythoneda-realm-rydnr/realm/tree/$PVERSION\033[0m";
       echo -e " \033[32m| |_) | |_| | |_| | | | (_) | | | |\033[34m  __/\033[35m (_| |\033[36m (_| |\033[34mhttps://github.com/pythoneda-realm-rydnr\033[0m";
       echo -e " \033[32m| .__/ \__, |\__|_| |_|\___/|_| |_|\033[34m\___|\033[35m\__,_|\033[36m\__,_|\033[35mhttps://github.com/nixos/nixpkgs/tree/$NIXPKGSRELEASE\033[0m";
-      echo -e " \033[32m| |     __/ |        \033[33mPYTHONEDA-REALM-RYDNR          \033[36mhttps://docs.python.org/$PYVERSION\033[0m";
+      echo -e " \033[32m| |     __/ |        \033[34mPYTHONEDA-REALM-RYDNR          \033[36mhttps://docs.python.org/$PYVERSION\033[0m";
       echo -e " \033[32m|_|\033[37m \033[31mR\033[36mD\033[32m |___/                 \033[33mREALM                  \033[37mhttps://patreon.com/rydnr\033[0m";
       echo;
       echo " Thank you for using pythoneda-realm-rydnr/realm, and for your appreciation of free software.";

@@ -10,7 +10,7 @@ packages = [{include = "@package@"}]
 [tool.poetry.dependencies]
 python = "^@pythonMajorMinorVersion@"
 pythoneda-realm-rydnr-events = "^@pythonedaRealmRydnrEventsVersion@"
-pythoneda-shared-git-domain = "^@pythonedaSharedGitDomainVersion@"
+pythoneda-shared-git-shared = "^@pythonedaSharedGitSharedVersion@"
 pythoneda-shared-artifact-changes-events = "^@pythonedaSharedArtifactChangesEventsVersion@"
 pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomainVersion@"
 

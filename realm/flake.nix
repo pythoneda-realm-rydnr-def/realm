@@ -40,6 +40,16 @@
       inputs.pythoneda-shared-pythoneda-domain.follows =
         "pythoneda-shared-pythoneda-domain";
     };
+    pythoneda-shared-artifact-changes-shared = {
+      url =
+        "github:pythoneda-shared-artifact-changes/shared-artifact/0.0.1a5?dir=shared";
+      inputs.nixos.follows = "nixos";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.pythoneda-shared-pythoneda-banner.follows =
+        "pythoneda-shared-pythoneda-banner";
+      inputs.pythoneda-shared-pythoneda-domain.follows =
+        "pythoneda-shared-pythoneda-domain";
+    };
     pythoneda-shared-git-shared = {
       url = "github:pythoneda-shared-git/shared-artifact/0.0.1a10?dir=shared";
       inputs.nixos.follows = "nixos";
@@ -86,6 +96,7 @@
         shared = import "${pythoneda-shared-pythoneda-banner}/nix/shared.nix";
         pythoneda-realm-rydnr-realm-for = { python, pythoneda-realm-rydnr-events
           , pythoneda-shared-artifact-changes-events
+          , pythoneda-shared-artifact-changes-shared
           , pythoneda-shared-git-shared, pythoneda-shared-pythoneda-domain }:
           let
             pnameWithUnderscores =
@@ -112,6 +123,8 @@
                 pythoneda-realm-rydnr-events.version;
               pythonedaSharedArtifactChangesEventsVersion =
                 pythoneda-shared-artifact-changes-events.version;
+              pythonedaSharedArtifactChangesSharedVersion =
+                pythoneda-shared-artifact-changes-shared.version;
               pythonedaSharedPythonedaDomainVersion =
                 pythoneda-shared-pythoneda-domain.version;
               pythonedaSharedGitSharedVersion =
@@ -130,6 +143,7 @@
             propagatedBuildInputs = with python.pkgs; [
               pythoneda-realm-rydnr-events
               pythoneda-shared-artifact-changes-events
+              pythoneda-shared-artifact-changes-shared
               pythoneda-shared-git-shared
               pythoneda-shared-pythoneda-domain
             ];
@@ -141,7 +155,6 @@
               sourceRoot=$(ls | grep -v env-vars)
               chmod +w $sourceRoot
               cp ${pyprojectTemplate} $sourceRoot/pyproject.toml
-              cat ${src}/pythoneda/realm/rydnr/__init__.py
             '';
 
             postInstall = ''
@@ -206,6 +219,8 @@
                 pythoneda-realm-rydnr-events.packages.${system}.pythoneda-realm-rydnr-events-python38;
               pythoneda-shared-artifact-changes-events =
                 pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python38;
+              pythoneda-shared-artifact-changes-shared =
+                pythoneda-shared-artifact-changes-shared.packages.${system}.pythoneda-shared-artifact-changes-shared-python38;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python38;
               pythoneda-shared-pythoneda-domain =
@@ -218,6 +233,8 @@
                 pythoneda-realm-rydnr-events.packages.${system}.pythoneda-realm-rydnr-events-python39;
               pythoneda-shared-artifact-changes-events =
                 pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python39;
+              pythoneda-shared-artifact-changes-shared =
+                pythoneda-shared-artifact-changes-shared.packages.${system}.pythoneda-shared-artifact-changes-shared-python39;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python39;
               pythoneda-shared-pythoneda-domain =
@@ -230,6 +247,8 @@
                 pythoneda-realm-rydnr-events.packages.${system}.pythoneda-realm-rydnr-events-python310;
               pythoneda-shared-artifact-changes-events =
                 pythoneda-shared-artifact-changes-events.packages.${system}.pythoneda-shared-artifact-changes-events-python310;
+              pythoneda-shared-artifact-changes-shared =
+                pythoneda-shared-artifact-changes-shared.packages.${system}.pythoneda-shared-artifact-changes-shared-python310;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python310;
               pythoneda-shared-pythoneda-domain =

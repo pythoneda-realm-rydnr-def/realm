@@ -22,7 +22,7 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-realm-rydnr-events = {
-      url = "github:pythoneda-realm-rydnr/events-artifact/0.0.1a4?dir=events";
+      url = "github:pythoneda-realm-rydnr/events-artifact/0.0.1a5?dir=events";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -32,7 +32,7 @@
     };
     pythoneda-shared-artifact-changes-events = {
       url =
-        "github:pythoneda-shared-artifact-changes/events-artifact/0.0.1a7?dir=events";
+        "github:pythoneda-shared-artifact-changes/events-artifact/0.0.1a8?dir=events";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -41,7 +41,7 @@
         "pythoneda-shared-pythoneda-domain";
     };
     pythoneda-shared-git-shared = {
-      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a9?dir=shared";
+      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a10?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -50,13 +50,13 @@
         "pythoneda-shared-pythoneda-domain";
     };
     pythoneda-shared-pythoneda-banner = {
-      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a6";
+      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a7";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a29?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a30?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -69,8 +69,8 @@
       let
         org = "pythoneda-realm-rydnr";
         repo = "realm";
-        version = "0.0.1a2";
-        sha256 = "sha256-TUH+QRpkL5j3UrsildOexTLqt4qWP7CjPsijKfpP0ao=";
+        version = "0.0.1a3";
+        sha256 = "sha256-Wv6y/bNoVBphEyEmRgn68XBrNerSnoujHVhBC/ruGyU=";
         pname = "${org}-${repo}";
         pkgs = import nixos { inherit system; };
         description = "Realm for pythoneda-realm-rydnr";
@@ -79,7 +79,7 @@
         maintainers = with pkgs.lib.maintainers;
           [ "rydnr <github@acm-sl.org>" ];
         archRole = "R";
-        space = "_";
+        space = "D";
         layer = "D";
         nixosVersion = builtins.readFile "${nixos}/.version";
         nixpkgsRelease = "nixos-${nixosVersion}";
@@ -90,7 +90,7 @@
           let
             pnameWithUnderscores =
               builtins.replaceStrings [ "-" ] [ "_" ] pname;
-            pythonpackage = "pythoneda.realm.rydnr";
+            pythonpackage = "pythoneda.realm.rydnr.domain";
             pythonVersionParts = builtins.splitVersion python.version;
             pythonMajorVersion = builtins.head pythonVersionParts;
             pythonMajorMinorVersion =
@@ -141,6 +141,7 @@
               sourceRoot=$(ls | grep -v env-vars)
               chmod +w $sourceRoot
               cp ${pyprojectTemplate} $sourceRoot/pyproject.toml
+              cat ${src}/pythoneda/realm/rydnr/__init__.py
             '';
 
             postInstall = ''

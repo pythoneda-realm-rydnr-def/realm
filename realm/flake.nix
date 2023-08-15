@@ -84,6 +84,7 @@
         version = "0.0.1a3";
         sha256 = "sha256-Wv6y/bNoVBphEyEmRgn68XBrNerSnoujHVhBC/ruGyU=";
         pname = "${org}-${repo}";
+        pythonpackage = "pythoneda.realm.rydnr";
         pkgs = import nixos { inherit system; };
         description = "Realm for pythoneda-realm-rydnr";
         license = pkgs.lib.licenses.gpl3;
@@ -103,7 +104,6 @@
           let
             pnameWithUnderscores =
               builtins.replaceStrings [ "-" ] [ "_" ] pname;
-            pythonpackage = "pythoneda.realm.rydnr.domain";
             pythonVersionParts = builtins.splitVersion python.version;
             pythonMajorVersion = builtins.head pythonVersionParts;
             pythonMajorMinorVersion =

@@ -1,8 +1,8 @@
-# realm/pyprojecttoml.template
+# pyprojecttoml.template
 #
 # This file is the template for pythoneda-realm-rydnr/realm's pyproject.toml
 #
-# Copyright (C) 2023-today rydnr's pythoneda-realm-rydnr/realm-artifact
+# Copyright (C) 2023-today rydnr's pythoneda-realm-rydnr-def/realm
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,8 +28,8 @@ packages = [{include = "@package@"}]
 [tool.poetry.dependencies]
 python = "^@pythonMajorMinor@"
 pythoneda-realm-rydnr-events = "^@pythonedaRealmRydnrEvents@"
-pythoneda-shared-artifact-changes-events = "^@pythonedaSharedArtifactChangesEvents@"
-pythoneda-shared-artifact-changes-shared = "^@pythonedaSharedArtifactChangesShared@"
+pythoneda-shared-artifact-events = "^@pythonedaSharedArtifactEvents@"
+pythoneda-shared-artifact-shared = "^@pythonedaSharedArtifactShared@"
 pythoneda-shared-code-requests-shared = "^@pythonedaSharedCodeRequestsShared@"
 pythoneda-shared-git-shared = "^@pythonedaSharedGitShared@"
 pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomain@"

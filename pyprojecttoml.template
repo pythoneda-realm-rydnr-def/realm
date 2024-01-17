@@ -32,7 +32,7 @@ pythoneda-shared-artifact-events = "^@pythonedaSharedArtifactEvents@"
 pythoneda-shared-artifact-shared = "^@pythonedaSharedArtifactShared@"
 pythoneda-shared-code-requests-shared = "^@pythonedaSharedCodeRequestsShared@"
 pythoneda-shared-git-shared = "^@pythonedaSharedGitShared@"
-pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomain@"
+pythoneda-shared-domain = "^@pythonedaSharedDomain@"
 
 [build-system]
 requires = ["poetry-core"]

@@ -123,7 +123,7 @@
               authors = builtins.concatStringsSep ","
                 (map (item: ''"${item}"'') maintainers);
               desc = description;
-              inherit homepage pname pythonpackage version;
+              inherit homepage pname pythonpackage package version;
               pythonMajorMinor = pythonMajorMinorVersion;
               pythonedaRealmRydnrEvents = pythoneda-realm-rydnr-events.version;
               pythonedaSharedArtifactEvents =
